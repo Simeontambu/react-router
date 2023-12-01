@@ -1,11 +1,19 @@
-import {Link} from "react-router-dom"
-export default function Login(){
-    return(
-        <>
-        <h1>Login</h1>
-        <button>
-        <Link to={'/home'}>Connexion</Link>
-    </button>
-        </>
-    )
+import {useNavigate} from "react-router-dom";
+
+export default function Login() {
+
+   const navigate = useNavigate();
+   const handleClick = () => {
+       navigate('/home');
+   }
+
+   return (
+       <>
+           <h1>Login</h1>
+
+           <button onClick={handleClick}>
+               Connexion
+           </button>
+       </>
+   );
 }
